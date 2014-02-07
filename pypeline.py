@@ -58,7 +58,7 @@ if __name__ == '__main__':
         sys.exit(1)
     
     pype = Pypeline()
-    converted = ['marker/DSC_0027.JPG', 'marker/DSC_0028.JPG', 'marker/DSC_0029.JPG', 'marker/DSC_0030.JPG', 'marker/DSC_0031.JPG']#pype.convert(sys.argv[1])
+    converted = pype.convert(sys.argv[1])
     registered = pype.register(converted)
     stacked = pype.stack(registered)
     cv2.imwrite('output.jpg', stacked)
