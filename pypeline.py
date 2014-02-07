@@ -71,16 +71,16 @@ class Pypeline:
     def stack(self, images=None):
         """Stack images.  Return one stacked image."""
         rows, cols, channels = images[0].shape
-        out = np.zeros(images[0].shape)
+        stacked = np.zeros(images[0].shape)
         
         for row in range(rows):
             for col in range(cols):
                 for channel in range(channels):
                     pixels = [image[row][col][channel] for image in images]
                     pixels.sort()
-                    out[row][col][channel] = pixels[int(math.floor(len(pixels) / 2))]
+                    stacked[row][col][channel] = pixels[int(math.floor(len(pixels) / 2))]
         
-        return out
+        return stacked
 
 
 if __name__ == '__main__':
