@@ -62,9 +62,8 @@ class Pypeline:
             sourcepoints = np.float32([keypoints1[m.queryIdx].pt for m in goodmatches])
             destpoints = np.float32([keypoints2[m.trainIdx].pt for m in goodmatches])
             
-            h, mask = cv2.findHomography(destpoints, sourcepoints, cv2.RANSAC, 5)
-            warpedimage = cv2.warpPerspective(images[i+1], h, (width, height))
-            
+            homography, mask = cv2.findHomography(destpoints, sourcepoints, cv2.RANSAC, 5)
+            warpedimage = cv2.warpPerspective(images[i+1], homography, (width, height))
             warped.append(warpedimage)
         return warped
 
