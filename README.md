@@ -15,6 +15,13 @@ is over 500 different cameras as of the time of this writing.
 Many thanks to Dave Coffin's dcraw for raw image conversion.  That project
 can be found at http://www.cybercom.net/~dcoffin/dcraw/
 
+Supported platforms
+==========
+Currently only linux is supported, but adding support for windows or osx
+should be easy enough, provided dcraw is available for those platforms as well.
+As for filetypes, pypeline should be compatible with anything dcraw can read.
+The list is quite substantial, I belive 500+ camera models as of this writing.
+
 Change log
 ==========
 
